@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E1E5AE71EFB32B5005A404B /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1E5AE61EFB32B5005A404B /* MovieCell.swift */; };
 		1E870F2E1EFB18090099FA5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E870F2D1EFB18090099FA5E /* AppDelegate.swift */; };
 		1E870F331EFB18090099FA5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E870F311EFB18090099FA5E /* Main.storyboard */; };
 		1E870F351EFB18090099FA5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E870F341EFB18090099FA5E /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E1E5AE61EFB32B5005A404B /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		1E870F2A1EFB18090099FA5E /* Flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E870F2D1EFB18090099FA5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E870F321EFB18090099FA5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				1E870F341EFB18090099FA5E /* Assets.xcassets */,
 				1E870F361EFB18090099FA5E /* LaunchScreen.storyboard */,
 				1E870F391EFB18090099FA5E /* Info.plist */,
+				1E1E5AE61EFB32B5005A404B /* MovieCell.swift */,
 			);
 			path = Flix;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				1E870F5C1EFB22680099FA5E /* NowPlayingViewController.swift in Sources */,
 				1E870F2E1EFB18090099FA5E /* AppDelegate.swift in Sources */,
+				1E1E5AE71EFB32B5005A404B /* MovieCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +509,7 @@
 				1E870F541EFB18090099FA5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1E870F551EFB18090099FA5E /* Build configuration list for PBXNativeTarget "FlixTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +518,7 @@
 				1E870F571EFB18090099FA5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1E870F581EFB18090099FA5E /* Build configuration list for PBXNativeTarget "FlixUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +527,7 @@
 				1E870F5A1EFB18090099FA5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
