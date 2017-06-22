@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class NowPlayingViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var movies = [[String: Any]] = []
+    var movies : [[String: Any]] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-        let task = session.dataTask(with: <#T##URL#>) { (data, respnse, error) in
+        let task = session.dataTask(with: url) { (data, respnse, error) in
             
             //this will run when the network request returns
             if let error = error {
@@ -50,10 +51,15 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         
         
         let movie = movies[indexPath.row]
-        let title = movies["title"] as! String
-        let overview = movies["overview"] as! String
+        let title = movie["title"] as! String
+        let overview = movie["overview"] as! String
         cell.titleLabel.text = title
         cell.overviewLabel.text = overview
+        
+        let posterPathString = movie["poster_path"] as! String
+        let baseURLString = "https://image.tmdb.org/t/p/w500"
+        let posterURL = URL(string: baseURLString + posterPathString)!
+        cell.posterImageView.af_setImage(withURL: posterURL)
         
         return cell
     }
