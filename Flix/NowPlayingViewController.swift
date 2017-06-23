@@ -12,6 +12,8 @@ import AlamofireImage
 class NowPlayingViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var movies : [[String: Any]] = []
     var refreshControl: UIRefreshControl!
@@ -19,12 +21,16 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        activityIndicator.startAnimating()
+        
+        
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(NowPlayingViewController.didPullToRefresh(_:)), for: .valueChanged)
         tableView.insertSubview(refreshControl, at: 0)
         
         tableView.dataSource = self
         fetchMovies()
+        
         
     }
     
@@ -47,10 +53,14 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
                 self.movies = movies
                 self.tableView.reloadData()
                 self.refreshControl.endRefreshing()
+                self.activityIndicator.stopAnimating()
+                
                 
             }
         }
         task.resume()
+        
+        
     }
 
     
@@ -93,6 +103,9 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+   
+    
+    
     
 
     
